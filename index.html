@@ -562,7 +562,7 @@ function getIndChecked(){
 }
 
 async function submitForm(){
-  var PA_URL='YOUR_SHF_POWER_AUTOMATE_URL_HERE';
+  var PA_URL='https://default4f484195c45d4307a579d353499069.b7.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/6989fe767f8c465cb68eca9977e911dc/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=zDto_2dR2Ru-rG7SLrc46iCMg8e-Bcnmc5XSE3eWIh4';
   var rows=[];
   for(var i=0;i<5;i++) rows.push([Math.max(0,parseInt(document.getElementById('m'+i).value)||0),Math.max(0,parseInt(document.getElementById('f'+i).value)||0)]);
   var km=parseInt(document.getElementById('km').value)||0;
