@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -514,7 +514,7 @@ function calcBudget(){
   var ovDays=Math.max(0,parseInt(document.getElementById('ovDays').value)||0);
   var dayN=Math.max(0,parseInt(document.getElementById('dayN').value)||0);
   var dayDays=Math.max(0,parseInt(document.getElementById('dayDays').value)||0);
-  var ov=ovN*ovDays*100000; var day=dayN*dayDays*50000; var allow=ov+day;
+  ov=ovN*ovDays*100000; day=dayN*dayDays*50000; allow=ov+day;
   suk('ovUGX','ovKES',ov); suk('dayUGX','dayKES',day); suk('allowUGX','allowKES',allow);
 
   var kitN=Math.max(0,parseInt(document.getElementById('kitN').value)||0);
@@ -537,6 +537,7 @@ function calcBudget(){
 }
 
 var scoreTotal=0;
+var ov=0,day=0,allow=0;
 document.querySelectorAll('input.ind').forEach(function(cb){
   cb.addEventListener('change',function(){
     var pts=parseInt(cb.getAttribute('data-pts')||0);
@@ -611,11 +612,11 @@ async function submitForm(){
     medicalTripsUGX:medTrip,
     transportTotalUGX:trans,
     transportTotalKES:Math.round(trans/30),
-    overnightPersons:ovN,
-    overnightDays:ovDays,
+    overnightPersons:parseInt(document.getElementById('ovN').value)||0,
+    overnightDays:parseInt(document.getElementById('ovDays').value)||0,
     overnightUGX:ov,
-    dayPersons:dayN,
-    dayDays:dayDays,
+    dayPersons:parseInt(document.getElementById('dayN').value)||0,
+    dayDays:parseInt(document.getElementById('dayDays').value)||0,
     dayUGX:day,
     allowancesUGX:allow,
     allowancesKES:Math.round(allow/30),
